@@ -3,7 +3,7 @@
 [Dd]ebug/
 [Rr]elease/
 *.cache
-*.obj
+#*.obj
 *.pdb
 *.suo
 *.user
@@ -28,3 +28,4 @@ yarn-error.log*
 # Windows
 Thumbs.db
 Desktop.ini
+/.gitignore
