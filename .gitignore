@@ -13,6 +13,12 @@
 *.mode
 *.lock-wsl
 
+# Visual Studio Publish Profiles
+*.pubxml
+*.pubxml.user
+# ARM template parameters, if generated
+*.arm.json
+
 # Node.js / React
 /node_modules
 /build
