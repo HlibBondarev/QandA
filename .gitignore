@@ -19,6 +19,18 @@
 # ARM template parameters, if generated
 *.arm.json
 
+# .NET Core & NuGet
+[Bb]in/
+[Oo]bj/
+*.dgspec.json
+*.g.props
+*.g.targets
+project.assets.json
+
+# Ignore VS-generated service dependency files
+serviceDependencies.local.json
+serviceDependencies.*.json
+
 # Node.js / React
 /node_modules
 /build
