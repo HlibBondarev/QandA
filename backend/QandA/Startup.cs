@@ -44,12 +44,18 @@ namespace QandA
 
             services.AddScoped<IDataRepository, DataRepository>();
 
-            services.AddCors(options =>
-            options.AddPolicy("CorsPolicy", builder =>
-            builder.AllowAnyMethod()
-                .AllowAnyHeader()
-                .AllowCredentials()
-                .WithOrigins(Configuration["Frontend"])));
+
+            var frontendUrl = Configuration["Frontend"];
+
+            if (!string.IsNullOrEmpty(frontendUrl))
+            {
+                services.AddCors(options =>
+                options.AddPolicy("CorsPolicy", builder =>
+                builder.AllowAnyMethod()
+                   .AllowAnyHeader()
+                   .AllowCredentials()
+                   .WithOrigins(Configuration["Frontend"])));
+            }
 
             services.AddSignalR();
 
