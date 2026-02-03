@@ -54,7 +54,7 @@ namespace QandA
                 builder.AllowAnyMethod()
                    .AllowAnyHeader()
                    .AllowCredentials()
-                   .WithOrigins(Configuration["Frontend"])));
+                   .WithOrigins(frontendUrl)));
             }
 
             services.AddSignalR();
@@ -88,6 +88,8 @@ namespace QandA
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseCors("CorsPolicy");
+
+            app.UseWebSockets();
 
             if (env.IsDevelopment())
             {

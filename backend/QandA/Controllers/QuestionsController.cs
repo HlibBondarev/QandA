@@ -151,7 +151,9 @@ namespace QandA.Controllers
 
             _cache.Remove(answerPostRequest.QuestionId.Value);
 
-            await _questionHubContext.Clients.Group($"Question-{answerPostRequest.QuestionId.Value}").SendAsync("ReceiveQuestion", _dataRepository.GetQuestion(answerPostRequest.QuestionId.Value));
+            var questionToBroadcast = await _dataRepository.GetQuestion(answerPostRequest.QuestionId.Value);
+
+            await _questionHubContext.Clients.Group($"Question-{answerPostRequest.QuestionId.Value}").SendAsync("ReceiveQuestion", questionToBroadcast);
 
             return savedAnswer;
         }
