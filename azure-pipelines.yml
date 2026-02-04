@@ -18,10 +18,18 @@ steps:
   displayName: 'backend build'
 
 - script: dotnet test
-  workingDirectory: backend
+  workingDirectory: backend/BackendTests
   displayName: 'backend tests'
 
 - script: dotnet publish --configuration $(buildConfiguration)
   workingDirectory: backend
   displayName: 'backend publish'
 
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: 'backend/QandA/bin/Release/net8.0/publish' 
+    includeRootFolder: false
+    archiveType: zip
+    archiveFile: '$(Build.ArtifactStagingDirectory)/backend/$(Build.BuildId).zip'
+    replaceExistingArchive: true 
+  displayName: 'backend zip files'
