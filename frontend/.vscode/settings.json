@@ -1,0 +1,11 @@
+{
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "editor.formatOnSave": true,
+  "appService.defaultWebAppToDeploy": "/subscriptions/518632e6-eb8c-4176-8370-6dd13a8b4c9d/resourceGroups/QandA-Project-RG/providers/Microsoft.Web/sites/qanda-front",
+  "appService.deploySubpath": "build"
+}
