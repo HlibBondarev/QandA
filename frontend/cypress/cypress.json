@@ -1,0 +1,6 @@
+{
+  "baseUrl": "https://qanda-front-staging-asc3ade4cffrcncy.canadacentral-01.azurewebsites.net",
+  "integrationFolder": "cypress/e2e",
+  "pluginsFile": false,
+  "supportFile": false
+}

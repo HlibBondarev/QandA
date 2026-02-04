@@ -1,0 +1,12 @@
+{
+  "name": "cypress-app-tests",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "cy:run": "cypress run"
+  },
+  "devDependencies": {
+    "@testing-library/cypress": "^10.1.0",
+    "cypress": "^14.5.4"
+  }
+}
