@@ -16,3 +16,11 @@ steps:
 - script: dotnet build --configuration $(buildConfiguration)
   workingDirectory: backend
   displayName: 'backend build'
+
+- script: dotnet test
+  workingDirectory: backend
+  displayName: 'backend tests'
+
+- script: dotnet publish --configuration $(buildConfiguration)
+  workingDirectory: backend
+  displayName: 'backend publish'
