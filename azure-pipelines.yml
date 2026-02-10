@@ -22,7 +22,7 @@ steps:
   displayName: 'backend tests'
 
 - script: dotnet publish --configuration $(buildConfiguration)
-  workingDirectory: backend
+  workingDirectory: backend/QandA
   displayName: 'backend publish'
 
 - task: ArchiveFiles@2
